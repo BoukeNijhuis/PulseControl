@@ -1,10 +1,13 @@
 package com.boombird.pulsecontrol.PNLControl;
 
 import android.content.ContentResolver;
+import android.util.Log;
 
 public class MockPNLControl extends BasePNLControl
 {
-    private boolean enabled = false;
+    private static final String CLASS = MockPNLControl.class.getName();
+
+    private boolean enabled = true;
 
     public MockPNLControl(ContentResolver contentResolver)
     {
@@ -20,6 +23,7 @@ public class MockPNLControl extends BasePNLControl
     @Override
     public void setEnabled(boolean enabled)
     {
+        Log.i(CLASS, "PNL set to " + enabled);
         this.enabled = enabled;
     }
 }

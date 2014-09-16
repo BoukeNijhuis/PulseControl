@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,10 @@ public class MainActivity extends Activity
         TextView view = (TextView) findViewById(R.id.textView);
         view.setText("inEmulator: " + PNLControlBuilder.inEmulator() + ", " +
                              "Build.Product: " + Build.PRODUCT);
+
+        // set the initial toggle state
+        Switch mySwitch = (Switch) findViewById(R.id.switch1);
+        mySwitch.setChecked(nlpc.isEnabled());
     }
 
     public void onPNLToggle(View view)
