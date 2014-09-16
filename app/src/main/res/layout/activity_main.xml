@@ -14,26 +14,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Toggle Pulse Notifaction Light"
-        android:id="@+id/toggle_button"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="97dp"
-        android:onClick="toggleButton"/>
-
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pulse Notifaction Light"
         android:id="@+id/switch1"
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/toggle_button"
-        android:layout_alignStart="@+id/toggle_button"
-        android:onClick="onPNLToggle"/>
+        android:onClick="onPNLToggle"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"/>
 
 </RelativeLayout>

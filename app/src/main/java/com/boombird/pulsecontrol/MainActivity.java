@@ -70,12 +70,4 @@ public class MainActivity extends Activity
         }
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * Called when the user touches the button
-     */
-    public void toggleButton(View view)
-    {
-
-    }
 }
