@@ -6,7 +6,7 @@ import android.util.Log;
 
 public class PNLControl extends BasePNLControl
 {
-    private static final String CLASS = PNLControl.class.getName();
+    private static final String CLASS = PNLControl.class.getSimpleName();
 
     public PNLControl(ContentResolver contentResolver)
     {

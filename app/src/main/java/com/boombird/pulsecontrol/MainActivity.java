@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,13 +17,13 @@ import com.boombird.pulsecontrol.PNLControl.PNLControlBuilder;
 
 public class MainActivity extends Activity
 {
+    private static final String CLASS = MainActivity.class.getSimpleName();
+
     BasePNLControl nlpc;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
+    private void init()
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Log.i(CLASS, "initializing");
 
         // create a CControl
         nlpc = PNLControlBuilder.getInstance(this.getContentResolver());
@@ -35,6 +36,24 @@ public class MainActivity extends Activity
         // set the initial toggle state
         Switch mySwitch = (Switch) findViewById(R.id.switch1);
         mySwitch.setChecked(nlpc.isEnabled());
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        init();
+    }
+
+    protected void onResume()
+    {
+        super.onResume();
+
+        Log.i(CLASS, "onResume()");
+
+        init();
     }
 
     public void onPNLToggle(View view)
@@ -75,4 +94,7 @@ public class MainActivity extends Activity
         }
         return super.onOptionsItemSelected(item);
     }
+
+    // TODO: check of hij ook echt uit/aan gaat
+    // TODO: app maken die elke twee seconden een pulse geeft
 }

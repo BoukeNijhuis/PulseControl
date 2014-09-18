@@ -5,7 +5,7 @@ import android.util.Log;
 
 public class MockPNLControl extends BasePNLControl
 {
-    private static final String CLASS = MockPNLControl.class.getName();
+    private static final String CLASS = MockPNLControl.class.getSimpleName();
 
     private boolean enabled = true;
 
